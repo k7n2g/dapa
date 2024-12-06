@@ -1,21 +1,20 @@
 # DAPA
-All rights reserved.
 
-A from scratch blockchain made in Rust and powered by Tokio, using account model. DAPA is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system. This allow to be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
+A blockchain made in Rust powered by Tokio, using an account model. DAPA is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system. This allows to be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
 
 BlockDAG is enabled to improve the scalability and the security of the network. Homomorphic Encryption using ElGamal is used to provide privacy on transactions (transfered amounts) and balances.
 
-ElGamal cryptosystem was choosen because it's a well known and studied encryption algorithm which has homomorphism features. ElGamal is fast and is used in combination with Ristretto255 curve to provide a good level of security (~128 bits of security). Homomorphic operations available using ElGamal are addition/subtraction between ciphertexts and/or plaintext and multiplication against plaintext value.
+ElGamal cryptosystem is choosen because it's a Proven and studied encryption algorithm with homomorphic features. ElGamal is fast and is used in combination with Ristretto255 curve to provide a good level of security (~128 bits of security). Homomorphic operations available using ElGamal are addition/subtraction between ciphertexts and/or plaintext and multiplication against plaintext value.
 
 Account Model allows to have a more flexible system than UTXO model and to have a better privacy because there is no need to link inputs and outputs, which provide real fungibility. It allows also the fast-sync feature to only download the last state of the blockchain instead of downloading all the history.
 
-Pruning system is also available to reduce the size of the blockchain by removing old blocks and transactions.
+Pruning system is  available to enable reducing of the blockchain size by removing old blocks and transactions.
 
-We also aims to enabled Smart Contracts support in the future.
+We hope to enabled Smart Contract support in the future.
 
-We provide different built-in networks:
+Different built-in networks are available:
 - Mainnet: Released April 20, 2024.
-- Testnet: Running
+- Testnet: currently disabled
 - Devnet: this network is used for local development purpose where you want to create your own local chain. It has no peers
 
 ## Acknowledgments
@@ -28,7 +27,7 @@ We provide different built-in networks:
 [@deroholic](https://github.com/deroholic):
 - Difficulty adjustment algorithm using Kalman-Filter.
 
-Thank you to every people testing actively the code base, honest miners and every future contributors!
+Our thanks to the all that support and engage with with Great crypto community.
 
 ## Main features
 
@@ -48,31 +47,31 @@ The main features of DAPA are the following:
 The main objectives of DAPA are:
 - Provide privacy on transactions / balances.
 - Provide Smart Contracts support.
-- Secure and fast.
+- Secure. Easy and fast to use.
 
 Others objectives in mind are:
-- Provide real custom assets working as the native coin.
-- Designed as CPU/GPU mining friendly to improve decentralization as possible.
-- Simple to use.
-- Community driven decisions.
+- Provide real custom assets and value for the DAPA coin.
+- Designed as CPU/GPU mining friendly to improve decentralization as much as possible.
+- Simple user framework for everyday use.
+
 
 ## Config
 
 ### Network
 
-- Expected Block Time is `15` seconds
-- Address prefix is `xel` on mainnet and `xet` for testnet/devnet
-- Transaction fee is based on various parameters (fee is `0.0001` XEL per KB, `0.001` XEL per account creation, `0.00005` XEL per transfer)
+- Expected Block Time is `12/15` seconds
+- Address prefix is `dap` on mainnet and `dah` for testnet/devnet
+- Transaction fee is based on various parameters (fee is `0.0001` DAP per KB, `0.001` DAP per account creation, `0.00005` DAP per transfer)
 - Up to `8` decimals
-- Maximum supply: `18.4` millions
+- Maximum supply: `100` million
 - Maximum block size: `1.25` MB
-- Difficulty adjustment algorithm: retarget at every block
-- Block reward emission: retarget at every block (Smooth decrease)
+- Difficulty adjustment algorithm: retargets for every block
+- Block reward emission: retargets at every block (Smooth decrease)
 
 ### Daemon
 
-- Default P2P port is `2125`
-- Defaut RPC Server port is `8080`
+- Default P2P port is `20100`
+- Defaut RPC Server port is `20101`
 
 ### Wallet
 
@@ -479,10 +478,10 @@ DApp can also request to sign the `ApplicationData` to persist the configured pe
 First JSON message from the dApp must be in following format to identify the application:
 ```json
 {
-    "id": "0000006b2aec4651b82111816ed599d1b72176c425128c66b2ab945552437dc9",
+    "id": "0000005b2adc4651b92131816et579d1b72376c485125c68b2ab945252437ac6",
     "name": "DAPA Example",
     "description": "Description example of up to 255 characters",
-    "url": "https://xelis.io",
+    "url": "https://dapahe.com",
     "permissions": {}
 }
 ```
@@ -541,5 +540,5 @@ To helps the development, the success and provide a better support of DAPA, we s
 
 Current dev fee curve is as following:
 
-- 10% from block 0 to 3,250,000 (expected time is ~1.5 years with BlockDAG).
-- 5% from 3,250,001 until the project being developed is stable on major facets of the ecosystem in order to reduce it.
+- 5% from block 0 to 3,250,000 (expected time is ~1.5 years with BlockDAG).
+- 3% from 3,250,001 until the project being developed is stable on major facets of the ecosystem in order to reduce it.
