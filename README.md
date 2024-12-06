@@ -1,6 +1,6 @@
 # DAPA
 
-A blockchain made in Rust powered by Tokio, using an account model. DAPA is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system. This allows to be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
+An Advanced blockchain made in Rust powered by Tokio, using an account model. DAPA is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system. This allows to be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
 
 BlockDAG is enabled to improve the scalability and the security of the network. Homomorphic Encryption using ElGamal is used to provide privacy on transactions (transfered amounts) and balances.
 
