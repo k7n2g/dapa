@@ -1,9 +1,9 @@
-# DAPA 
+# DAPA
 All rights reserved.
 
-A from scratch blockchain made in Rust and powered by Tokio, using account model. DAPA  is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system. This allow to be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
+An Advanced blockchain in Rust powered by Tokio, using account model. DAPA is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system developed by Slixe. This allows us be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
 
-BlockDAG is enabled to improve the scalability and the security of the network. Homomorphic Encryption using ElGamal is used to provide privacy on transactions (transfered amounts) and balances.
+BlockDAG is enabled to improve the scalability and the security of the network.The now proven Homomorphic Encryption using ElGamal is used to provide privacy on transactions (transfered amounts) and balances.
 
 ElGamal cryptosystem was choosen because it's a well known and studied encryption algorithm which has homomorphism features. ElGamal is fast and is used in combination with Ristretto255 curve to provide a good level of security (~128 bits of security). Homomorphic operations available using ElGamal are addition/subtraction between ciphertexts and/or plaintext and multiplication against plaintext value.
 
@@ -23,20 +23,19 @@ We provide different built-in networks:
 [@cchudant](https://github.com/cchudant):
 - Optimized decoding RistrettoPoint implementation (ECDLP).
 - Twisted ElGamal implementation along ZK-Proofs integration for Confidential Transactions.
-- To read more, please see [DAPA -HE](https://github.com/xelis-project/xelis-he) framework created by him.
+- To read more, please see [DAPA-HE](https://github.com/xelis-project/xelis-he) framework created by him.
 
 [@deroholic](https://github.com/deroholic):
 - Difficulty adjustment algorithm using Kalman-Filter.
 
-Thank you to every people testing actively the code base, honest miners and every future contributors!
-
+Our thanks to all who support and contribute to the Cryto world.
 ## Main features
 
-The main features of DAPA  are the following:
+The main features of DAPA are the following:
 - **BlockDAG**: reduce orphaned blocks rate.
-- **Egalitarian Mining**: any CPU or GPU can mine DAPA  easily.
+- **Egalitarian Mining**: any CPU or GPU can mine DAPA easily.
 - **Privacy**: Homomorphic Encryption allows to have encrypted balances and encrypted transfered amounts.
-- **Confidential Asset**: Any asset deployed on DAPA  network will have the same privacy and functionality like DAPA . Not just a number in a Smart Contract.
+- **Confidential Asset**: Any asset deployed on DAPA network will have the same privacy and functionality as seen in DAPA. No longer a numbers in a Smart Contract.
 - **Event system**: every event happening on the network (daemon or wallet) can be detected and notified easily.
 - **Instant Sync**: Your wallet balances and history is synced in few seconds.
 - **Smart Contracts**: Create and deploy unstoppable decentralized applications.
@@ -45,34 +44,33 @@ The main features of DAPA  are the following:
 
 ## Objectives
 
-The main objectives of DAPA  are:
-- Provide privacy on transactions / balances.
-- Provide Smart Contracts support.
-- Secure and fast.
+The main objectives of DAPA are:
+- Provide Users privacy on transactions / balances.
+- Provide Smart Contracts for everything.
+- Secure, Easy and fast to use.
 
-Others objectives in mind are:
-- Provide real custom assets working as the native coin.
+Others objectives are:
+- Provide real custom assets value working as the DAPA coin.
 - Designed as CPU/GPU mining friendly to improve decentralization as possible.
-- Simple to use.
-- Community driven decisions.
+- Simple in use.
 
 ## Config
 
 ### Network
 
-- Expected Block Time is `15` seconds
-- Address prefix is `xel` on mainnet and `xet` for testnet/devnet
-- Transaction fee is based on various parameters (fee is `0.0001` XEL per KB, `0.001` XEL per account creation, `0.00005` XEL per transfer)
-- Up to `8` decimals
-- Maximum supply: `18.4` millions
-- Maximum block size: `1.25` MB
+- Expected Block Time is `12/15` seconds
+- Address prefix is `dap` on mainnet and `dah` for testnet/devnet
+- Transaction fee is based on various parameters (fee is `0.0001` DAPA coin per KB, `0.001` DAPA per account creation, `0.00005` DAPA per transfer)
+- Up to `8` decimals for trading and future division.
+- Maximum supply: `100` million
+- Maximum block size: `1.25`Â MB
 - Difficulty adjustment algorithm: retarget at every block
 - Block reward emission: retarget at every block (Smooth decrease)
 
 ### Daemon
 
-- Default P2P port is `2125`
-- Defaut RPC Server port is `8080`
+- Default P2P port is `20100`
+- Defaut RPC Server port is `20101`
 
 ### Wallet
 
@@ -80,7 +78,7 @@ Others objectives in mind are:
 
 ## BlockDAG
 
-DAPA  use a blockDAG with following rules:
+DAPA use a blockDAG with following rules:
 - A block is considered `Sync Block` when the block height is less than `TOP_HEIGHT - STABLE_LIMIT` and it's the unique block at a specific height (or only ordered block at its height and don't have lower cumulative difficulty than previous blocks).
 - A block is considered `Side Block` when block height is less than or equal to height of past 8 topological blocks.
 - A block is considered `Orphaned` when the block is not ordered in DAG (no topological height for it).
@@ -110,8 +108,8 @@ Each balances, transaction assets values are in encrypted form and nobody can de
 
 ## Mining
 
-Mining capabilities of DAPA  are a bit differents from others chains because of standards being not implemented.
-Each job send to a miner is a `MinerWork` instance in hex format.
+Mining capabilities of DAPA are a bit different from others chains. 
+Each job sent to a miner is a `MinerWork` instance in hex format.
 
 The `MinerWork` is in following format:
 - header work hash: 32 bytes
@@ -145,7 +143,7 @@ Miners software are recommended to update themselves the block timestamp (or at 
 
 ## Client Protocol
 
-DAPA  integrate along with BlockDAG a way to accept multiple times the same TX and only execute it one time.
+DAPA integrate along with BlockDAG a way to accept multiple times the same TX and only execute it one time.
 Instead of excluding the whole block because we have a collision with another blockDAG branch for a TX, we just don't execute the TX and keep its hash.
 
 The same TX can be contained in multiple blocks only if:
@@ -241,7 +239,7 @@ This is the perfect mix between Fast sync and traditional chain sync, to have th
 
 ### Packets
 
-This parts explains the most importants packets used in DAPA  network to communicate over the P2p network.
+This parts explains the most importants packets used in DAPA network to communicate over the P2p network.
 
 #### Key Exchange
 
@@ -460,7 +458,7 @@ Events availables to subscribe on the wallet API are:
 
 ### XSWD
 
-XSWD (DAPA  Secure WebSocket DApp) Protocol is a WebSocket started on unique port `44325` and path `/xswd` for easy findings from dApps.
+XSWD (DAPA Secure WebSocket DApp) Protocol is a WebSocket started on unique port `40222` and path `/xswd` for easy findings from dApps.
 Its job is to provide an easy to access and secure way to communicate from a desktop/CLI wallet to any dApp (software or in-browser/websites directly).
 
 It's based on the JSON-RPC API and have exact same methods for easy compabitility, the only exception is how verification is done.
@@ -479,10 +477,10 @@ DApp can also request to sign the `ApplicationData` to persist the configured pe
 First JSON message from the dApp must be in following format to identify the application:
 ```json
 {
-    "id": "0000006b2aec4651b82111816ed599d1b72176c425128c66b2ab945552437dc9",
-    "name": "DAPA  Example",
+    "id": "0000004c6aec4351b82111926ed599d1b72176c445127c66b8ab945152437da9",
+    "name": "DAPA Example",
     "description": "Description example of up to 255 characters",
-    "url": "https://xelis.io",
+    "url": "https://dapahe.com",
     "permissions": {}
 }
 ```
@@ -532,16 +530,14 @@ You can also build a debug version (just remove `--release` option) or run it di
 
 ### Build from Docker
 To build using Docker, use the following command, using the `app` build argument to chose which project to build:
-`docker build -t xelis-daemon:master --build-arg app=dapa_daemon .`
+`docker build -t dapa-daemon:master --build-arg app=dapa_daemon .`
 
 ## Funding
-
-DAPA  is a community driven project and is not funded by any company or organization.
-To helps the development, the success and provide a better support of DAPA , we set a dev fee percentage starting at 10% on block reward.
 
 Current dev fee curve is as following:
 
 - 10% from block 0 to 3,250,000 (expected time is ~1.5 years with BlockDAG).
 - 5% from 3,250,001 until the project being developed is stable on major facets of the ecosystem in order to reduce it.
-#   d a p a  
- 
+#   d a p a 
+ 
+ 
