@@ -23,9 +23,9 @@ pub const MAXIMUM_SUPPLY: u64 = 100_000_000 * COIN_VALUE;
 
 // Addresses format
 // mainnet prefix address
-pub const PREFIX_ADDRESS: &str = "xel";
+pub const PREFIX_ADDRESS: &str = "dap";
 // testnet prefix address
-pub const TESTNET_PREFIX_ADDRESS: &str = "xet";
+pub const TESTNET_PREFIX_ADDRESS: &str = "dah";
 
 // 1 KB = 1024 bytes
 pub const BYTES_PER_KB: usize = 1024;

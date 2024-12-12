@@ -330,7 +330,7 @@ fn build_prompt_message(prompt: &ShareablePrompt, topoheight: u64, median_topohe
 
     format!(
         "{} | {} | {} | {} | {} | {} | {} {}{} ",
-        prompt.colorize_str(Color::Blue, "DAPA "),
+        prompt.colorize_str(Color::BrightYellow, "DAPA "),
         topoheight_str,
         network_hashrate_str,
         mempool_str,

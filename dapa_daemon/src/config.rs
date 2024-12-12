@@ -96,7 +96,7 @@ pub const TRANSACTION_FEE_BURN_PERCENT: u64 = 30;
 
 // Developer address for paying dev fees until Smart Contracts integration
 // (testnet/mainnet format is converted lazily later)
-pub const DEV_ADDRESS: &str = "xel:vs3mfyywt0fjys0rgslue7mm4wr23xdgejsjk0ld7f2kxng4d4nqqnkdufz";
+pub const DEV_ADDRESS: &str = "dap:vs3mfyywt0fjys0rgslue7mm4wr23xdgejsjk0ld7f2kxng4d4nqqnkdufz";
 
 // Chain sync config
 // minimum X seconds between each chain sync request per peer
@@ -227,13 +227,13 @@ const TESTNET_SEED_NODES: [&str; 0] = [
 
 // Genesis block to have the same starting point for every nodes
 // Genesis block in hexadecimal format
-const MAINNET_GENESIS_BLOCK: &str = "0000000000000000000000018efc057580000000000000000000000000000000000000000000000000000000000000000000000000000000000000006423b4908e5bd32241e3443fccfb7bab86a899a8cca12b3fedf255634d156d66";
-const TESTNET_GENESIS_BLOCK: &str = "0000000000000000000000018f116b47cf000000000000000000000000000000000000000000000000000000000000000000000000000000000000006423b4908e5bd32241e3443fccfb7bab86a899a8cca12b3fedf255634d156d66";
+const MAINNET_GENESIS_BLOCK: &str = "0000000000000000000000018f116b47cf0000000000000000000000000000000000000000000000000000000000000000000000000000000000000098d01dd3ee183f8812f1a41f7f0f303e1e4bd9341ed0c57b4c30eadf4f6f027b";
+const TESTNET_GENESIS_BLOCK: &str = "0000000000000000000000018f116b47cf0000000000000000000000000000000000000000000000000000000000000000000000000000000000000098d01dd3ee183f8812f1a41f7f0f303e1e4bd9341ed0c57b4c30eadf4f6f027b";
 
 // Genesis block hash for both networks
 // It must be the same as the hash of the genesis block
-const MAINNET_GENESIS_BLOCK_HASH: Hash = Hash::new([175, 118, 37, 203, 175, 200, 25, 148, 9, 202, 29, 120, 93, 128, 36, 209, 146, 193, 217, 36, 61, 51, 24, 194, 114, 113, 121, 208, 237, 163, 27, 55]);
-const TESTNET_GENESIS_BLOCK_HASH: Hash = Hash::new([171, 50, 219, 186, 28, 164, 189, 225, 197, 167, 187, 143, 213, 59, 217, 238, 51, 242, 133, 181, 188, 235, 151, 50, 110, 33, 185, 188, 100, 146, 23, 132]);
+const MAINNET_GENESIS_BLOCK_HASH: Hash = Hash::new([145, 152, 150, 21, 160, 79, 96, 50, 124, 213, 35, 97, 129, 129, 175, 9, 145, 52, 98, 164, 191, 88, 87, 152, 45, 178, 119, 134, 215, 2, 177, 180]);
+const TESTNET_GENESIS_BLOCK_HASH: Hash = Hash::new([145, 152, 150, 21, 160, 79, 96, 50, 124, 213, 35, 97, 129, 129, 175, 9, 145, 52, 98, 164, 191, 88, 87, 152, 45, 178, 119, 134, 215, 2, 177, 180]);
 
 // Genesis block getter
 // This is necessary to prevent having the same Genesis Block for differents network
