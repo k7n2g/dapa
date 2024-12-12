@@ -1,22 +1,17 @@
 # DAPA
 All rights reserved.
 
-An Advanced blockchain in Rust powered by Tokio, using account model. DAPA is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system developed by Slixe. This allows us be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
+An Advanced blockchain in Rust powered by Tokio, using an account base model. DAPA is based on an event-driven system combined with the native async/await and works with a unique and from scratch p2p system developed by Slixe. This allows us be notified on any events happening on the network and to be able to react to them instead of checking periodically for updates.
 
 BlockDAG is enabled to improve the scalability and the security of the network.The now proven Homomorphic Encryption using ElGamal is used to provide privacy on transactions (transfered amounts) and balances.
 
 ElGamal cryptosystem was choosen because it's a well known and studied encryption algorithm which has homomorphism features. ElGamal is fast and is used in combination with Ristretto255 curve to provide a good level of security (~128 bits of security). Homomorphic operations available using ElGamal are addition/subtraction between ciphertexts and/or plaintext and multiplication against plaintext value.
 
-Account Model allows to have a more flexible system than UTXO model and to have a better privacy because there is no need to link inputs and outputs, which provide real fungibility. It allows also the fast-sync feature to only download the last state of the blockchain instead of downloading all the history.
+Account Model allows a more flexible system than UTXO models with privacy as a default, because there is no need to link inputs and outputs, which provide real fungibility. It allows also a fast-sync feature to only download the last state of the blockchain instead of downloading all the history thus reducing storage capacities while keeping total anonimity for users.
 
-Pruning system is also available to reduce the size of the blockchain by removing old blocks and transactions.
+A Pruning system is also available to reduce the size of the blockchain by removing old blocks and transactions.
 
-We also aims to enabled Smart Contracts support in the future.
-
-We provide different built-in networks:
-- Mainnet: Released April 20, 2024.
-- Testnet: Running
-- Devnet: this network is used for local development purpose where you want to create your own local chain. It has no peers
+We also aim to enable more Smart Contracts support in the future.
 
 ## Acknowledgments
 
@@ -32,19 +27,20 @@ Our thanks to all who support and contribute to the Cryto world.
 ## Main features
 
 The main features of DAPA are the following:
-- **BlockDAG**: reduce orphaned blocks rate.
+- **BlockDAG**: Virtual elimination of orphaned blocks.
 - **Egalitarian Mining**: any CPU or GPU can mine DAPA easily.
 - **Privacy**: Homomorphic Encryption allows to have encrypted balances and encrypted transfered amounts.
-- **Confidential Asset**: Any asset deployed on DAPA network will have the same privacy and functionality as seen in DAPA. No longer a numbers in a Smart Contract.
+- **Confidential Asset**: Any asset deployed on DAPA network will have the same privacy and functionality as seen in DAPA. No longer a number on a Smart Contract.
 - **Event system**: every event happening on the network (daemon or wallet) can be detected and notified easily.
 - **Instant Sync**: Your wallet balances and history is synced in few seconds.
 - **Smart Contracts**: Create and deploy unstoppable decentralized applications.
 - **Integrated addresses**: introduce any data in your wallet address to share informations in a transaction.
-- **Easy to use**: We aims to provide the most easiest platform to build and use daily.
+- **Easy to use**: We aim to provide the easiest platform to build and use daily.
 
 ## Objectives
 
 The main objectives of DAPA are:
+- Provide Users Payment System with Total Privacy and accountability.
 - Provide Users privacy on transactions / balances.
 - Provide Smart Contracts for everything.
 - Secure, Easy and fast to use.
@@ -59,7 +55,7 @@ Others objectives are:
 ### Network
 
 - Expected Block Time is `12/15` seconds
-- Address prefix is `dap` on mainnet and `dah` for testnet/devnet
+- Address prefix is `dap` on mainnet.
 - Transaction fee is based on various parameters (fee is `0.0001` DAPA coin per KB, `0.001` DAPA per account creation, `0.00005` DAPA per transfer)
 - Up to `8` decimals for trading and future division.
 - Maximum supply: `100` million
@@ -541,5 +537,3 @@ Current dev fee curve is as following:
 #   d a p a 
  
  
-#   d a p a  
- 
